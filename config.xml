@@ -11,7 +11,6 @@
 
     <author href="http://phonegap.com" email="support@phonegap.com">Maxjf1</author>
     <content src="index.html"/>
-    <preference name="permissions" value="none"/>
     <preference name="orientation" value="portrait"/>
     <preference name="target-device" value="universal"/>
     <preference name="fullscreen" value="false"/>
@@ -20,7 +19,6 @@
     <preference name="disable-cursor" value="false"/>
     <preference name="android-minSdkVersion" value="14"/>
     <preference name="android-installLocation" value="auto"/>
-    <gap:plugin name="org.apache.cordova.media"/>
 
     <icon src="icon.png"/>
     <icon src="www/icon.png" gap:platform="android" gap:qualifier="ldpi"/>
