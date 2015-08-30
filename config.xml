@@ -2,8 +2,8 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap="http://phonegap.com/ns/1.0"
         id="com.maxjf1.coala"
-        versionCode = "1"
-        version="1.4.0">
+        versionCode = "2"
+        version="1.4.5">
 
 
     <name>coala</name>
