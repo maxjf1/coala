@@ -56,11 +56,10 @@
     }
     function onSucess()
     {
-        alert("playaudio:sucess");
     }
     function onError(error)
     {
-        alert('playaudio:error '+error.code + error.message);
+        alert('play audio:error '+error.code + error.message);
     }
     function setAudioPosition(position) {
         document.getElementById('audio_position').innerHTML = position;
@@ -68,7 +67,7 @@
 </script>
 <img src="koala.jpg" alt="starting" onclick="playsound('/android_asset/www/som.mp3')"/>
 
-<p onclick="playsound('som.mp3')">Coala</p>
+<p onclick="playsound('/android_asset/www/som.mp3')">Coala</p>
 
 <audio id="som" src="som.mp3" type="audio/mpeg"></audio>
 
