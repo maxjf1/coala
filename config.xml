@@ -21,6 +21,9 @@
     <preference name="android-installLocation" value="auto"/>
     <gap:plugin name="org.apache.cordova.media"/>
     <gap:plugin name="org.apache.cordova.device"/>
+        <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
 
     <icon src="icon.png"/>
     <icon src="www/icon.png" gap:platform="android" gap:qualifier="ldpi"/>
