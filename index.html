@@ -35,10 +35,31 @@
     function playsound() {
         document.getElementById('som').play();
     }
+    function playSound(src){
+        var devicePlatform = (typeof device !== 'undefined' && device.platform)? device.platform: null;
+        if (typeof Audio !== "undefined" && devicePlatform === null) {          // HTML5 Audio
+            new Audio(src).play() ;
+        } else if ( devicePlatform ) {              // Phonegap media
+            if (devicePlatform === 'Android') {     // Android needs the search path explicitly specified
+                src = '/android_asset/www/' + src;
+            }
+            var media  = new Media(src,
+                    function onSuccess() {
+                        media.release();                // Release the media resource once finished playing
+                    },
+                    function onError(e){
+                        console.log("error playing sound: " + JSON.stringify(e));
+                    }
+            );
+            media.play({numberOfLoops: 1});
+        } else {
+            console.log("no sound API to play: " + src);
+        }
+    }
 </script>
-<img src="koala.jpg" alt="starting" onclick="playsound()"/>
+<img src="koala.jpg" alt="starting" onclick="playsound('som.mp3')"/>
 
-<p onclick="playsound()">Coala</p>
+<p onclick="playsound('som.mp3')">Coala</p>
 
 <audio id="som" src="/android_asset/www/som.mp3" type="audio/mpeg"></audio>
 
